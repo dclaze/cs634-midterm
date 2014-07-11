@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="LinearRegression.js"></script>
+    <script src="main.js"></script>
+    <style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 3px;
+    }
+    </style>
+</head>
+
+<body ng-app="CS634Midterm">
+    <div ng-controller="Main">
+        <table>
+            <thead>
+                <tr>
+                    <td>Results</td>
+                    <td>
+                        <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{m}&space;x_{i}" title="\sum_{i=1}^{m} x_{i}" />
+                    </td>
+                    <td>
+                        <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{m}&space;y_{i}" title="\sum_{i=1}^{m} y_{i}" />
+                    </td>
+                    <td>
+                        <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{m}&space;y_{i}&space;x_{i}" title="\sum_{i=1}^{m} y_{i} x_{i}" />
+                    </td>
+                    <td>
+                        <img src="http://latex.codecogs.com/gif.latex?\sum_{i=1}^{m}&space;x_{i}^{2}" title="\sum_{i=1}^{m} x_{i}^{2}" />
+                    </td>
+                    <td style="width:20px">A</td>
+                    <td style="width:20px">B</td>
+                    <td style="width:20px">Q</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="r in results">
+                    <td>{{r.x.id}} -> {{r.y.id}}</td>
+                    <td>{{r.xSummation}}</td>
+                    <td>{{r.ySummation}}</td>
+                    <td>{{r.xySummation}}</td>
+                    <td>{{r.xSquaredSummation}}</td>
+                    <td>{{r.a}}</td>
+                    <td>{{r.b}}</td>
+                    <td>{{r.q}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
